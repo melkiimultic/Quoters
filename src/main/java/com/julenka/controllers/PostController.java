@@ -20,7 +20,7 @@ public class PostController {
     @Autowired
     private QuoteValidator quoteValidator;
 
-//todo 415 unsupported media type не понимает и не дружит с json
+
     @PostMapping(value = "/quote", consumes = "application/json" )
     public ResponseEntity addQuote(@RequestBody Quote quote) {
         if (quoteValidator.validate(quote.getText()) == false) {
